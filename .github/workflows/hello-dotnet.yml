@@ -31,4 +31,4 @@ jobs:
         run: dotnet test --no-build --configuration Release --verbosity normal --logger trx $TEST_PROJECT
       
       - name: "Get test results"
-        run: dorny/test-reporter
+        uses: dorny/test-reporter@v1.6.0
