@@ -29,3 +29,6 @@ jobs:
 
       - name: "Test project"
         run: dotnet test --no-build --configuration Release --verbosity normal --logger trx $TEST_PROJECT
+      
+      - name: "Get test results"
+        run: dorny/test-reporter
