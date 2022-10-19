@@ -12,3 +12,5 @@ jobs:
         run: "echo 'Hei på deg GitHub Actions!'"
       - name: "Echo Goodnight"
         run: "echo 'Natta!'"
+      - name: "Echo Sleeping"
+        run: "echo 'sove nå, Eddie sover også'"
