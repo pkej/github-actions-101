@@ -22,15 +22,7 @@ jobs:
         run: dotnet restore Notes.Api.Test/Notes.Api.Test.csproj
 
       - name: "Build project"
-        run: dotnet build \
-            --no-restore \
-            --configuration Release \
-            Notes.Api.Test/Notes.Api.Test.csproj
+        run: dotnet build --no-restore --configuration Release Notes.Api.Test/Notes.Api.Test.csproj
 
       - name: "Test project"
-        run: dotnet test \
-            --no-build \   
-            --configuration Release \
-            --verbosity normal \
-            --logger trx \
-            Notes.Api.Test/Notes.Api.Test.csproj
+        run: dotnet test --no-build --configuration Release --verbosity normal --logger trx Notes.Api.Test/Notes.Api.Test.csproj
