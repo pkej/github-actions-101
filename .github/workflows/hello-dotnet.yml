@@ -30,7 +30,9 @@ jobs:
       - name: "Test project"
         run: dotnet test --no-build --configuration Release --verbosity normal --logger trx $TEST_PROJECT
       
-      - uses: dorny/test-reporter@v1.6.0
+      - name: "Test Report"
+        uses: dorny/test-reporter@v1.6.0
+        if: success() || failure()    # run this step even if previous step failed
         with:
           artifact: TestResults             # artifact name
           name: DOTnet Tests                  # Name of the check run which will be created
