@@ -30,5 +30,9 @@ jobs:
       - name: "Test project"
         run: dotnet test --no-build --configuration Release --verbosity normal --logger trx $TEST_PROJECT
       
-      - name: "Get test results"
-        uses: dorny/test-reporter@v1.6.0
+      - uses: dorny/test-reporter@v1.6.0
+        with:
+          artifact: TestResults             # artifact name
+          name: DOTnet Tests                  # Name of the check run which will be created
+          path: '*.xml'                     # Path to test results (inside artifact .zip)
+          reporter: dotnet-trx              # Format of test results
